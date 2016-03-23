@@ -1,0 +1,30 @@
+### Types
+
+- `/software/afsclt/component_afsclt_entry`
+    - `/software/afsclt/component_afsclt_entry/thiscell`
+        - required
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/thesecells`
+        - optional
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/settime`
+        - optional
+        - type: boolean
+    - `/software/afsclt/component_afsclt_entry/cellservdb`
+        - optional
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/cachemount`
+        - optional
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/cachesize`
+        - optional
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/options`
+        - optional
+        - type: nlist
+    - `/software/afsclt/component_afsclt_entry/enabled`
+        - required
+        - type: string
+    - `/software/afsclt/component_afsclt_entry/afsd_args`
+        - optional
+        - type: string
