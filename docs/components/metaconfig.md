@@ -5,12 +5,16 @@
 \#
 
 \### #
+\### Current developer(s):
+\###   Luis Fernando Muñoz Mejías <Luis.Munoz@UGent.be>
 \#
 
 \### #
+\### Author(s): Luis Fernando Muñoz Mejías
+\#
 
 \### #
-\### metaconfig, 16.2.0, 1, 2016-03-24T09:26:33Z
+\### metaconfig, 16.6.0, 1, Fri Jul 29 2016
 \#
 
 ### NAME
@@ -238,6 +242,10 @@ And now, we only have to specify the contents:
 
 That's it!  When you deploy your configuration you should see your
 `/etc/foo.ini` in the correct location.
+
+\#
+\### Author(s): Luis Fernando Muñoz Mejías
+\#
 
 ### TODO
 

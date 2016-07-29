@@ -183,7 +183,7 @@ Mark Wilson <Mark.Wilson@MorganStanley.com>
 
 ### VERSION
 
-16.2.0
+16.6.0
 
 ### SEE ALSO
 
