@@ -2,6 +2,10 @@ language: ruby
 rvm:
 - 2.1
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y mkdocs
+
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
 script: ./travis-build
@@ -19,7 +23,3 @@ cache: bundler
 
 sudo: false
 
-addons:
-  apt:
-    packages:
-    - mkdocs
