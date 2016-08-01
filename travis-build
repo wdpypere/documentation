@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+mkdocs build
+bundle exec htmlproofer  --check-html ./site/
