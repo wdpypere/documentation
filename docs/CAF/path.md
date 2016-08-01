@@ -10,7 +10,7 @@ Simplify common file and directory related operations e.g.
 - cleanup
 - (mockable) file/directory tests
 
-The class is based on [LC::Check](https://metacpan.org/pod/LC::Check) with following major difference
+The class is based on `LC::Check` with following major difference
 
 - `CAF::Object::NoAction` support builtin (and `keeps_state` option to override it).
 - support `CAF::Reporter` (incl. `CAF::History`)
@@ -134,7 +134,7 @@ undef on failure and store the error message in the `fail` attribute.
     - temp
 
         A boolean if true will create a a temporary directory using
-        [File::Temp::tempdir](https://metacpan.org/pod/File::Temp::tempdir).
+        `File::Temp::tempdir`.
 
         The directory name is the template to use (any trailing
         `X` characters will be replaced with random characters by `tempdir`;

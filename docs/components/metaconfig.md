@@ -85,7 +85,7 @@ The configuration information for the component.  It is an nlist of
 
 - element
 
-    Predefined conversions from [EDG::WP4::CCM::TextRender](https://metacpan.org/pod/EDG::WP4::CCM::TextRender):
+    Predefined conversions from [EDG::WP4::CCM::TextRender](../CCM/textrender.md):
 
     - yesno ? boolean
 
