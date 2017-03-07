@@ -22,6 +22,9 @@ Adding the test is as simple as
     Pass `notest` to disable automatic testing
     (only useful when testing this code).
 
+    Pass `nopod` to set the `nopodflag` (for `doc` test)
+    when testing (is ignored when `notest` is passed).
+
 ### METHODS
 
 - new
@@ -75,9 +78,12 @@ Adding the test is as simple as
 
     Documentation tests using `Test::Quattor::Doc`.
 
-    Configuration options `poddirs`, `podfiles`, `panpaths` and
-    `panout` are prased as comma-sperated lists
+    Configuration options `poddirs`, `podfiles`, `emptypoddirs`, `panpaths` and
+    `panout` are parsed as comma-seperated lists
     and passed to `Test::Quattor::Doc-`new>.
+
+    If the `nopodflag` attribute is true, and no `emptypoddirs` are defined,
+    the `Test::Quattor::Doc::DOC_TARGET_POD` is set as `emptypoddirs`.
 
     `panpaths` value `NOPAN` is special, as it disables the pan tests.
 
@@ -101,7 +107,7 @@ Adding the test is as simple as
     - codedirs
 
         Comma-separated list of directories to look for code to test.
-        (Defaults to `target/lib/perl`).
+        (Defaults to poddirs (from doc test) or `target/lib/perl`).
 
     - exclude
 
@@ -116,4 +122,4 @@ Adding the test is as simple as
     - codedirs
 
         Comma-separated list of directories to look for code to test.
-        (Defaults to `target/lib/perl`).
+        (Defaults to poddirs (from doc test) or `target/lib/perl`).

@@ -28,6 +28,12 @@ Should be used mainly as follows:
 
         Array reference of podfiles to test (default empty)
 
+    - emptypoddirs
+
+        Array reference of poddirs that must be empty (or non-existing).
+        If a directory is in both `poddirs` and `emptypoddirs`,
+        if is considered an empty poddir.
+
     - panpaths
 
         Array reference of paths that hold pan files to check for annotations.

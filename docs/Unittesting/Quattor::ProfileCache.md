@@ -43,7 +43,7 @@ will return the `panc` exitcode upon `panc` failure.
 
 Returns a configuration object for the profile given as an
 argument. The profile should be one of the arguments given to
-[Test::Quattor](Quattor.md) when loading it.
+`Test::Quattor` when loading it.
 
 If the configuration cannot be found, an error is reported, and
 a test fails.
