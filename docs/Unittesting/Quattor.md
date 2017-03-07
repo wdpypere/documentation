@@ -21,7 +21,7 @@ as `target/test/profiles/foo.json`, while the cache will be stored in
 under `target/test/profiles/foo/`.
 
 This binary cache may be converted in an
-[EDG::WP4::CCM::Configuration](../CCM/Configuration.md) object using the
+`EDG::WP4::CCM::CacheManager::Configuration` object using the
 `get_config_for_profile` function.
 
 ### INTERNAL INFRASTRUCTURE
@@ -308,10 +308,6 @@ The following functions are exported by default:
 - reset\_caf\_path
 
     Reset `caf_path` ref. If `name` is defined, only reset that cache.
-
-- warn\_is\_ok
-
-    By default, Perl warnings are mapped to failing tests.
 
 ### BUGS
 

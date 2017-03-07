@@ -26,6 +26,11 @@ If undef is passed, remove the 'includepath' option.
 
 Return an array reference with the 'includepath' directories.
 
+#### is\_object\_template
+
+Given profile name (and optional resourcesdir for relative profile filename),
+test if the profile is a valid object template.
+
 #### Compile pan object template into JSON profile
 
 Compile the pan [profile](../components/profile.md) (file '`profile`.pan' in `resourcesdir`)

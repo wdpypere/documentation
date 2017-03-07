@@ -63,10 +63,12 @@
     - `/software/aiiserver/structure_aiidhcp/norestart`
         - Optional
         - Type: boolean
- - `/software/aiiserver/structure_component_aiiserver`
-    - `/software/aiiserver/structure_component_aiiserver/aii-shellfe`
+ - `/software/aiiserver/aiiserver_component`
+    - `/software/aiiserver/aiiserver_component/aii-shellfe`
+        - Description: Configures the aii-shellfe tool.
         - Optional
         - Type: structure_aiishellfe
-    - `/software/aiiserver/structure_component_aiiserver/aii-dhcp`
+    - `/software/aiiserver/aiiserver_component/aii-dhcp`
+        - Description: Configures AII::DHCP and the aii-dhcp legacy tool.
         - Optional
         - Type: structure_aiidhcp

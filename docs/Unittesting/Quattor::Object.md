@@ -1,5 +1,9 @@
 
-####  add\_loghist
+####  warn\_is\_ok
+
+By default, Perl warnings are mapped to failing tests.
+
+#### add\_loghist
 
 Add a log `message` for `type` to the log history.
 
