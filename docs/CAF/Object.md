@@ -79,25 +79,26 @@ In particular, one should avoid to return the `$self` instance at the end of
     Returns the `env` hashref.
 
     To be used as
+
         # Setup local environment
-        local %ENV;
-        $self->update\_env(\\%ENV);
+        local %ENV = %ENV;
+        $self->update_env(\%ENV);
 
     Example:
-        # some method\_1 that prepares a shared environment
-        sub method\_1
+
+        # some method_1 that prepares a shared environment
+        sub method_1
         {
             ...
             # Prepare enviroment modifications
             $self->{ENV}->{PATH} = "/some/new/path:$ENV{PATH}";
             ...
         }
-
         sub do_something
         {
            ...
            # Setup local environment
-           local %ENV;
+           local %ENV = %ENV;
            $self->update_env(\%ENV);
 
            # everything in the remainder of the method runs in modified environment
