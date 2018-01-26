@@ -42,41 +42,6 @@ undef on failure and store the error message in the `fail` attribute.
 
 #### Methods
 
-- \_get\_noaction
-
-    Return NoAction setting:
-
-    - Return 0 is `keeps_state` is true
-
-        Any other value of `keeps_state` is ignored. (In particular,
-        you cannot use `keeps_state` to enable NoAction).
-
-    - Return value of `CAF::Object::NoAction` otherwise.
-
-    Supports an optional `msg` that is prefixed to reporter.
-
-- \_reset\_exception\_fail
-
-    Reset previous exceptions and/or fail attribute.
-
-- \_function\_catch
-
-    Execute function reference `funcref` with arrayref `$args` and hashref `$opts`.
-
-    Method resets/ignores any existing errors and fail attribute, and catches any exception thrown.
-    No error is reported, it returns undef in this case and the fail attribute is set.
-
-- \_safe\_eval
-
-    Run function reference `funcref` with arrayref `argsref` and hashref `optsref`.
-
-    Return and set fail attribute with `failmsg` on die or an error (`undef` returned
-    by `funcref`), or print (at verbose level) `msg` on success (respectively $@ and
-    stringified result are appended). Note that `_safe_eval` doesn't work with functions
-    that don't return a defined value when they succeed.
-
-    Resets previous exceptions and/or fail attribute
-
 - LC\_Check
 
     Execute function `<LC::Check::<function`>> with arrayref `$args` and hashref `$opts`.

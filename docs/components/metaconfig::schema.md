@@ -3,7 +3,7 @@
 
  - `/software/metaconfig/metaconfig_extension`
  - `/software/metaconfig/metaconfig_textrender_convert`
-    - Description: 
+    - Description:
     Convert value of certain types (e.g. boolean to string yes/no)
     (using the CCM::TextRender element options)
 
@@ -37,6 +37,18 @@
         - Type: boolean
     - `/software/metaconfig/metaconfig_textrender_convert/joinspace`
         - Description: Convert list to space-separated string
+        - Optional
+        - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/unescapekey`
+        - Description: Unescape all dict keys
+        - Optional
+        - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/lowerkey`
+        - Description: Convert all dict keys to lowercase
+        - Optional
+        - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/upperkey`
+        - Description: Convert all dict keys to uppercase
         - Optional
         - Type: boolean
  - `/software/metaconfig/caf_service_action`

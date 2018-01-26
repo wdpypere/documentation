@@ -2,11 +2,15 @@
 ### Types
 
  - `/software/authconfig/sssd_provider_string`
-    - Description: 
-    Valid SSSD providers.  For now we only implement ldap, simple and local
+    - Description:
+    Valid SSSD providers.
+
+ - `/software/authconfig/sssd_auth_provider_string`
+    - Description:
+    Valid SSSD auth providers.
 
  - `/software/authconfig/authconfig_sssd_simple`
-    - Description: 
+    - Description:
     Simple access provider for SSSD.  See the sssd-simple man page.
 
     - `/software/authconfig/authconfig_sssd_simple/allow_users`
@@ -26,7 +30,6 @@
     - `/software/authconfig/sssd_global/debug_level`
         - Optional
         - Type: long
-        - Default value: 496
     - `/software/authconfig/sssd_global/config_file_version`
         - Optional
         - Type: long
@@ -37,7 +40,6 @@
     - `/software/authconfig/sssd_global/reconnection_retries`
         - Optional
         - Type: long
-        - Default value: 3
     - `/software/authconfig/sssd_global/re_expression`
         - Optional
         - Type: string
@@ -47,7 +49,6 @@
     - `/software/authconfig/sssd_global/try_inotify`
         - Optional
         - Type: boolean
-        - Default value: true
     - `/software/authconfig/sssd_global/krb5_rcache_dir`
         - Optional
         - Type: string
@@ -58,67 +59,58 @@
     - `/software/authconfig/sssd_pam/debug_level`
         - Optional
         - Type: long
-        - Default value: 496
+    - `/software/authconfig/sssd_pam/reconnection_retries`
+        - Optional
+        - Type: long
     - `/software/authconfig/sssd_pam/offline_credentials_expiration`
         - Optional
         - Type: long
-        - Default value: 0
     - `/software/authconfig/sssd_pam/offline_failed_login_attempts`
         - Optional
         - Type: long
-        - Default value: 0
     - `/software/authconfig/sssd_pam/offline_failed_login_delay`
         - Optional
         - Type: long
-        - Default value: 5
     - `/software/authconfig/sssd_pam/pam_verbosity`
         - Optional
         - Type: long
-        - Default value: 1
     - `/software/authconfig/sssd_pam/pam_id_timeout`
         - Optional
         - Type: long
-        - Default value: 5
     - `/software/authconfig/sssd_pam/pam_pwd_expiration_warning`
         - Optional
         - Type: long
-        - Default value: 0
     - `/software/authconfig/sssd_pam/get_domains_timeout`
         - Optional
         - Type: long
-        - Default value: 60
  - `/software/authconfig/sssd_nss`
     - `/software/authconfig/sssd_nss/debug_level`
         - Optional
         - Type: long
-        - Default value: 496
+    - `/software/authconfig/sssd_nss/reconnection_retries`
+        - Optional
+        - Type: long
     - `/software/authconfig/sssd_nss/enum_cache_timeout`
         - Optional
         - Type: long
-        - Default value: 120
     - `/software/authconfig/sssd_nss/entry_cache_nowait_percentage`
         - Optional
         - Type: long
     - `/software/authconfig/sssd_nss/entry_negative_timeout`
         - Optional
         - Type: long
-        - Default value: 15
     - `/software/authconfig/sssd_nss/filter_users`
         - Optional
         - Type: string
-        - Default value: root
     - `/software/authconfig/sssd_nss/filter_users_in_groups`
         - Optional
         - Type: boolean
-        - Default value: true
     - `/software/authconfig/sssd_nss/filter_groups`
         - Optional
         - Type: string
-        - Default value: root
     - `/software/authconfig/sssd_nss/memcache_timeout`
         - Optional
         - Type: long
-        - Default value: 300
  - `/software/authconfig/authconfig_sssd_local`
     - `/software/authconfig/authconfig_sssd_local/default_shell`
         - Optional
@@ -152,6 +144,9 @@
         - Optional
         - Type: string
  - `/software/authconfig/authconfig_sssd_domain`
+    - `/software/authconfig/authconfig_sssd_domain/reconnection_retries`
+        - Optional
+        - Type: long
     - `/software/authconfig/authconfig_sssd_domain/ldap`
         - Optional
         - Type: authconfig_sssd_ldap
@@ -172,14 +167,13 @@
         - Type: sssd_provider_string
     - `/software/authconfig/authconfig_sssd_domain/auth_provider`
         - Optional
-        - Type: sssd_provider_string
+        - Type: sssd_auth_provider_string
     - `/software/authconfig/authconfig_sssd_domain/chpass_provider`
         - Optional
-        - Type: sssd_provider_string
+        - Type: sssd_auth_provider_string
     - `/software/authconfig/authconfig_sssd_domain/debug_level`
         - Optional
         - Type: long
-        - Default value: 496
     - `/software/authconfig/authconfig_sssd_domain/sudo_provider`
         - Optional
         - Type: string
@@ -198,7 +192,6 @@
     - `/software/authconfig/authconfig_sssd_domain/re_expression`
         - Optional
         - Type: string
-        - Default value: (?P<name>[^@]+)@?(?P<domain>[^@]*$)
     - `/software/authconfig/authconfig_sssd_domain/full_name_format`
         - Optional
         - Type: string
@@ -224,11 +217,9 @@
     - `/software/authconfig/authconfig_sssd_domain/proxy_fast_alias`
         - Optional
         - Type: boolean
-        - Default value: false
     - `/software/authconfig/authconfig_sssd_domain/subdomain_homedir`
         - Optional
         - Type: string
-        - Default value: /home/%d/%u
     - `/software/authconfig/authconfig_sssd_domain/proxy_pam_target`
         - Optional
         - Type: string

@@ -45,18 +45,18 @@ difference the support of a `EDG::WP4::CCM::CacheManager::Element` instance as c
 
                 generates a block with format
                     <"key">
-                        &lt;recursive rendering of the value>
-                    &lt;/"key">
+                        &lt;recursive rendering of the value> &lt;/"key">
+                    </"key">
 
             - arrayref of hashref
 
                 generates series of blocks
                     <"key">
-                        &lt;recursive rendering of the element0>
-                    &lt;/"key">
+                        &lt;recursive rendering of the element0> &lt;/"key">
+                    </"key">
                     <"key">
-                        &lt;recursive rendering of the element1>
-                    &lt;/"key">
+                        &lt;recursive rendering of the element1> &lt;/"key">
+                    </"key">
                     ...
 
             (Whitespace in the block name is enforced with double quotes.)
@@ -148,6 +148,18 @@ difference the support of a `EDG::WP4::CCM::CacheManager::Element` instance as c
             non-scalar is not converted (but any of the nested list could).
 
             Caveat: is preceded by `joincomma` option.
+
+        - unescapekey
+
+            Unescape all dict keys.
+
+        - lowerkey
+
+            Convert all dict keys to lowercase.
+
+        - upperkey
+
+            Convert all dict keys to uppercase.
 
         Other `getTree` options
 

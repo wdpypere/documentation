@@ -44,7 +44,7 @@
     - `/software/opennebula/opennebula_federation/master_oned`
         - Optional
         - Type: string
-        - Default value: 
+        - Default value:
  - `/software/opennebula/opennebula_im`
     - `/software/opennebula/opennebula_im/executable`
         - Optional
@@ -152,7 +152,7 @@
         - Optional
         - Type: boolean
  - `/software/opennebula/opennebula_ds_mad_conf`
-    - Description: 
+    - Description:
 The  configuration for each driver is defined in DS_MAD_CONF.
 These values are used when creating a new datastore and should not be modified
 since they defined the datastore behavior.
@@ -175,7 +175,7 @@ since they defined the datastore behavior.
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_market_mad_conf`
-    - Description: 
+    - Description:
 The  configuration for each driver is defined in MARKET_MAD_CONF.
 These values are used when creating a new marketplace and should not be modified
 since they define the marketplace behavior.
@@ -195,7 +195,7 @@ A public marketplace can be removed even if it has registered apps.
         monitor: the apps of the marketplace will be monitored.
         create: the app in the marketplace.
         delete: the app from the marketplace.
-    
+
         - Optional
         - Type: string
     - `/software/opennebula/opennebula_market_mad_conf/public`
@@ -203,7 +203,7 @@ A public marketplace can be removed even if it has registered apps.
         - Optional
         - Type: boolean
  - `/software/opennebula/opennebula_default_cost`
-    - Description: 
+    - Description:
 The following attributes define the default cost for Virtual Machines that don't have
 a CPU, MEMORY or DISK cost.
 This is used by the oneshowback calculate method.
@@ -221,7 +221,7 @@ This is used by the oneshowback calculate method.
         - Type: long
         - Default value: 0
  - `/software/opennebula/opennebula_vnc_ports`
-    - Description: 
+    - Description:
 VNC_BASE_PORT is deprecated since OpenNebula 5.0
 OpenNebula will automatically assign start + vmid,
 allowing to generate different ports for VMs so they do not collide.
@@ -237,7 +237,7 @@ allowing to generate different ports for VMs so they do not collide.
         - Optional
         - Type: long
  - `/software/opennebula/opennebula_vlan_ids`
-    - Description: 
+    - Description:
 LAN ID pool for the automatic VLAN_ID assignment.
 This pool is for 802.1Q networks (Open vSwitch and 802.1Q drivers).
 The driver will try first to allocate VLAN_IDS[START] + VNET_ID
@@ -251,7 +251,7 @@ The driver will try first to allocate VLAN_IDS[START] + VNET_ID
         - Optional
         - Type: long
  - `/software/opennebula/opennebula_vxlan_ids`
-    - Description: 
+    - Description:
 Automatic VXLAN Network ID (VNI) assignment.
 This is used or vxlan networks.
 NOTE: reserved is not supported by this pool
@@ -262,14 +262,14 @@ NOTE: reserved is not supported by this pool
         - Type: long
         - Default value: 2
  - `/software/opennebula/opennebula_market_mad`
-    - Description: 
+    - Description:
 Drivers to manage different marketplaces, specialized for the storage backend.
 
     - `/software/opennebula/opennebula_market_mad/executable`
         - Description: path of the transfer driver executable, can be an absolute path or
     relative to $ONE_LOCATION/lib/mads (or /usr/lib/one/mads/ if OpenNebula was
     installed in /)
-    
+
         - Optional
         - Type: string
         - Default value: one_market
@@ -277,12 +277,12 @@ Drivers to manage different marketplaces, specialized for the storage backend.
         - Description: arguments for the driver executable:
         -t number of threads, i.e. number of repo operations at the same time
         -m marketplace mads separated by commas
-    
+
         - Optional
         - Type: string
         - Default value: -t 15 -m http,s3,one
  - `/software/opennebula/opennebula_ceph_datastore`
-    - Description: 
+    - Description:
 type for ceph datastore specific attributes.
 ceph_host, ceph_secret, ceph_user, ceph_user_key and pool_name are mandatory
 
@@ -306,7 +306,7 @@ ceph_host, ceph_secret, ceph_user, ceph_user_key and pool_name are mandatory
         - Type: long
         - Range: 1..2
  - `/software/opennebula/opennebula_ar`
-    - Description: 
+    - Description:
 type for vnet ars specific attributes.
 type and size are mandatory
 
@@ -330,7 +330,7 @@ type and size are mandatory
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_datastore`
-    - Description: 
+    - Description:
 type for an opennebula datastore. Defaults to a ceph datastore (ds_mad is ceph).
 shared DS is also supported
 
@@ -438,7 +438,7 @@ shared DS is also supported
         - Optional
         - Type: opennebula_permissions
  - `/software/opennebula/opennebula_user`
-    - Description: 
+    - Description:
 Set OpenNebula regular users and their primary groups.
 By default new users are assigned to the users group.
 
@@ -458,7 +458,7 @@ By default new users are assigned to the users group.
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_group`
-    - Description: 
+    - Description:
 Set a group name and an optional decription
 
     - `/software/opennebula/opennebula_group/description`
@@ -489,7 +489,7 @@ Set a group name and an optional decription
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_oned`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 oned.conf file
 
@@ -694,7 +694,7 @@ oned.conf file
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_rpc_service`
-    - Description: 
+    - Description:
 type for opennebula service common RPC attributes.
 
     - `/software/opennebula/opennebula_rpc_service/one_xmlrpc`
@@ -708,7 +708,7 @@ type for opennebula service common RPC attributes.
         - Type: string
         - Default value: cipher
  - `/software/opennebula/opennebula_sunstone`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 sunstone_server.conf file
 
@@ -767,11 +767,11 @@ sunstone_server.conf file
     - `/software/opennebula/opennebula_sunstone/vnc_proxy_cert`
         - Optional
         - Type: string
-        - Default value: 
+        - Default value:
     - `/software/opennebula/opennebula_sunstone/vnc_proxy_key`
         - Optional
         - Type: string
-        - Default value: 
+        - Default value:
     - `/software/opennebula/opennebula_sunstone/vnc_proxy_ipv6`
         - Optional
         - Type: boolean
@@ -805,7 +805,7 @@ sunstone_server.conf file
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_oneflow`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 oneflow-server.conf file
 
@@ -833,7 +833,7 @@ oneflow-server.conf file
         - Description: default shutdown action
     terminate : OpenNebula >= 5.0.0
     shutdown : OpenNebula < 5.0.0
-    
+
         - Optional
         - Type: string
         - Default value: terminate
@@ -856,7 +856,7 @@ oneflow-server.conf file
         $SERVICE_NAME
         $ROLE_NAME
         $VM_NUMBER
-    
+
         - Optional
         - Type: string
         - Default value: $ROLE_NAME_$VM_NUMBER_(service_$SERVICE_ID)
@@ -866,13 +866,13 @@ oneflow-server.conf file
         1 = WARNING
         2 = INFO
         3 = DEBUG
-    
+
         - Optional
         - Type: long
         - Range: 0..3
         - Default value: 2
  - `/software/opennebula/opennebula_kvmrc`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 VMM kvmrc conf files
 
@@ -911,7 +911,7 @@ VMM kvmrc conf files
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_vnm_conf`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 VNM (Virtual Network Manager) configuration file on the nodes
 
@@ -939,7 +939,7 @@ VNM (Virtual Network Manager) configuration file on the nodes
         - Type: long
         - Default value: 16
  - `/software/opennebula/opennebula_rpc`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula conf
 to contact to ONE RPC server
 
@@ -959,7 +959,7 @@ to contact to ONE RPC server
         - Optional
         - Type: string
  - `/software/opennebula/opennebula_untouchables`
-    - Description: 
+    - Description:
 Type that sets the OpenNebula
 untouchable resources
 
@@ -979,7 +979,7 @@ untouchable resources
         - Optional
         - Type: string
  - `/software/opennebula/component_opennebula`
-    - Description: 
+    - Description:
 Type to define ONE basic resources
 datastores, vnets, hosts names, etc
 
@@ -1026,7 +1026,7 @@ datastores, vnets, hosts names, etc
         - Type: boolean
         - Default value: true
     - `/software/opennebula/component_opennebula/cfg_group`
-        - Description: in some cases (such a Sunstone standalone configuration with apache), 
+        - Description: in some cases (such a Sunstone standalone configuration with apache),
     some OpenNebula configuration files should be accessible by a different group (as apache).
     This variable sets the group name to change these files permissions.
         - Optional
@@ -1046,21 +1046,21 @@ datastores, vnets, hosts names, etc
         shared: The storage area for the system datastore is a shared directory across the hosts.
         vmfs: A specialized version of the shared one to use the vmfs file system.
         ssh: Uses a local storage area from each host for the system datastore.
-    
+
         - Optional
         - Type: string
 
 ### Functions
 
  - is_consistent_database
-    - Description: 
+    - Description:
 check if a specific type of database has the right attributes
 
  - is_consistent_datastore
-    - Description: 
+    - Description:
 check if a specific type of datastore has the right attributes
 
  - is_consistent_vnet
-    - Description: 
+    - Description:
 check if a specific type of vnet has the right attributes
 

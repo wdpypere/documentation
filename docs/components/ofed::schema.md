@@ -227,7 +227,7 @@
         - Optional
         - Type: string
  - `/software/ofed/component_ofed_partition`
-    - Description: 
+    - Description:
     Partition entry
 
     - `/software/ofed/component_ofed_partition/key`

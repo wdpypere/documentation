@@ -72,6 +72,17 @@ secure.
             By default, commands modify the state and thus `keeps_state` is
             false.
 
+        - `sensitive`
+
+            A boolean specifying whether the arguments contain sensitive information
+            (like passwords). If `sensitive` is true, the commandline will not be reported
+            (by default when `log` option is used, the commandline is reported
+            with verbose level).
+
+            This does not cover command output. If the output (stdout and/or stderr) contains
+            sensitve information, make sure to handle it yourself via `stdout` and/or `stderr`
+            options (or by using the `output` method).
+
         These options will only be used by the execute method.
 
 - \_LC\_Process
@@ -81,7 +92,7 @@ secure.
     `noaction_value` is is the value to return with `NoAction`.
 
     `msg` and `postmsg` are used to construct log message
-    `<<msg` command: <COMMAND>\[ &lt;postmsg>\]>>.
+    `<<msg` command: <COMMAND>\[ <postmsg>\]>>.
 
 #### Public methods
 
