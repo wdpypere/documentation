@@ -34,9 +34,17 @@ NCM component allowing to configure CUPS service and declare printers.
     Generally, options apply either to server configuration or to client configuration. There is
     one exception, `ServerName`, which applies to both.
 
-    **Note** : not all the options are currently implemented. If you get a message `unsupported option` when
+    **Note** : not all the CUPS options are currently implemented. If you get a message `unsupported option` when
     running this component, look at the comments at the beginning of component Perl source about how to add
     support for a new option.
+
+- `/software/components/cups/options/ServerAlias` : list of string
+
+    This option sets the `ServerAlias` option in cupsd configuration. It is interpreted as a list of string.
+
+    Default : None
+
+    Scope : server
 
 - `/software/components/cups/options/ServerName` : string
 

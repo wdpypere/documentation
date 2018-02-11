@@ -65,6 +65,10 @@
       If the mounts change, then the component will attempt to unmount any
       mounts which are removed and mount any new ones.  If the options
       change, then the volume will be remounted.
+
+      If the list is empty, all supported mounts in fstab will be removed.
+      If you don't want ncm-nfs to modify /etc/fstab, do not set the mounts
+      attribute at all.
     
         - Optional
         - Type: structure_nfs_mounts

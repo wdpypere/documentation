@@ -101,3 +101,7 @@
         - Description: seconds, total timeout for fetch of file, can be overridden per file
         - Optional
         - Type: long
+    - `/software/download/download_component/kinit_args`
+        - Description: argumensts to be passed in kinit -k called in ncm-download
+        - Optional
+        - Type: string

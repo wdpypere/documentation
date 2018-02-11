@@ -30,11 +30,11 @@
  - `/software/opennebula/opennebula_vmtemplate_vnet`
  - `/software/opennebula/opennebula_vmtemplate_datastore`
  - `/software/opennebula/valid_interface_ignoremac`
-    - Description:  
+    - Description: 
 Type that checks if the network interface is available from the quattor tree
 
  - `/software/opennebula/opennebula_ignoremac`
-    - Description:  
+    - Description: 
 Type that sets which net interfaces/MACs
 will not include MAC values within ONE templates
 
@@ -165,20 +165,39 @@ More info: http://docs.opennebula.org/5.0/operation/references/template.html#pla
         - Optional
         - Type: opennebula_vmtemplate_pci
     - `/software/opennebula/opennebula_vmtemplate/labels`
-        - Description: labels is a list of strings to group the VMs under a given name and filter them 
-    in the admin and cloud views. It is also possible to include in the list 
+        - Description: labels is a list of strings to group the VMs under a given name and filter them
+    in the admin and cloud views. It is also possible to include in the list
     sub-labels using a common slash: list("Name", "Name/SubName")
-    This feature is available since OpenNebula 5.x, below this version the change 
+    This feature is available since OpenNebula 5.x, below this version the change
     does not take effect.
         - Optional
         - Type: string
     - `/software/opennebula/opennebula_vmtemplate/placements`
         - Optional
         - Type: opennebula_placements
+    - `/software/opennebula/opennebula_vmtemplate/memorybacking`
+        - Description: The optional memoryBacking element may contain several elements that influence
+    how virtual memory pages are backed by host pages.
+    hugepages: This tells the hypervisor that the guest should have its memory
+    allocated using hugepages instead of the normal native page size.
+    nosharepages: Instructs hypervisor to disable shared pages
+    (memory merge, KSM) for this domain.
+    locked: When set and supported by the hypervisor, memory pages belonging to the domain
+    will be locked in hosts memory and the host will not be allowed to swap them out,
+    which might be required for some workloads such as real-time. For QEMU/KVM guests,
+    the memory used by the QEMU process itself will be locked too: unlike guest memory,
+    this is an amount libvirt has no way of figuring out in advance, so it has to remove
+    the limit on locked memory altogether. Thus, enabling this option opens up to a
+    potential security risk: the host will be unable to reclaim the locked memory back
+    from the guest when its running out of memory, which means a malicious guest allocating
+    large amounts of locked memory could cause a denial-of-service attach on the host.
+        - Optional
+        - Type: string
 
 ### Functions
 
  - validate_aii_opennebula_hooks
-    - Description:  
+    - Description: 
 Function to validate all aii_opennebula hooks
 
+ - is_consistent_memorybacking

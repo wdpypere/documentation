@@ -39,6 +39,18 @@
         - Description: Convert list to space-separated string
         - Optional
         - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/unescapekey`
+        - Description: Unescape all dict keys
+        - Optional
+        - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/lowerkey`
+        - Description: Convert all dict keys to lowercase
+        - Optional
+        - Type: boolean
+    - `/software/metaconfig/metaconfig_textrender_convert/upperkey`
+        - Description: Convert all dict keys to uppercase
+        - Optional
+        - Type: boolean
  - `/software/metaconfig/caf_service_action`
  - `/software/metaconfig/metaconfig_config`
     - `/software/metaconfig/metaconfig_config/mode`

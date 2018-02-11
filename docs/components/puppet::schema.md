@@ -28,29 +28,48 @@
         - Type: string
         - Default value: /etc/puppet/hieradata
  - `/software/puppet/puppet_hieraconf`
-    - `/software/puppet/puppet_hieraconf/_3abackends`
-        - Optional
-        - Type: string
-    - `/software/puppet/puppet_hieraconf/_3ayaml`
-        - Optional
-        - Type: puppet_hieraconf_yaml
-    - `/software/puppet/puppet_hieraconf/_3ahierarchy`
-        - Optional
-        - Type: string
  - `/software/puppet/puppet_hieradata`
  - `/software/puppet/puppet_component`
+    - `/software/puppet/puppet_component/puppet_cmd`
+        - Optional
+        - Type: string
+        - Default value: /usr/bin/puppet
+    - `/software/puppet/puppet_component/logfile`
+        - Optional
+        - Type: string
+        - Default value: /var/log/puppet/log
+    - `/software/puppet/puppet_component/modulepath`
+        - Optional
+        - Type: string
+        - Default value: /etc/puppet/modules
     - `/software/puppet/puppet_component/modules`
         - Optional
         - Type: puppet_module
     - `/software/puppet/puppet_component/nodefiles`
         - Optional
         - Type: puppet_nodefile
+    - `/software/puppet/puppet_component/nodefiles_path`
+        - Optional
+        - Type: string
+        - Default value: /etc/puppet/manifests
     - `/software/puppet/puppet_component/puppetconf`
         - Optional
         - Type: puppet_puppetconf
+    - `/software/puppet/puppet_component/puppetconf_file`
+        - Optional
+        - Type: string
+        - Default value: /etc/puppet/puppet.conf
     - `/software/puppet/puppet_component/hieraconf`
         - Optional
         - Type: puppet_hieraconf
+    - `/software/puppet/puppet_component/hieraconf_file`
+        - Optional
+        - Type: string
+        - Default value: /etc/puppet/hiera.yaml
     - `/software/puppet/puppet_component/hieradata`
         - Optional
         - Type: puppet_hieradata
+    - `/software/puppet/puppet_component/hieradata_file`
+        - Optional
+        - Type: string
+        - Default value: /etc/puppet/hieradata/quattor.yaml

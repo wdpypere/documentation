@@ -1026,7 +1026,7 @@ datastores, vnets, hosts names, etc
         - Type: boolean
         - Default value: true
     - `/software/opennebula/component_opennebula/cfg_group`
-        - Description: in some cases (such a Sunstone standalone configuration with apache), 
+        - Description: in some cases (such a Sunstone standalone configuration with apache),
     some OpenNebula configuration files should be accessible by a different group (as apache).
     This variable sets the group name to change these files permissions.
         - Optional

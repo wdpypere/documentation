@@ -149,6 +149,18 @@ difference the support of a `EDG::WP4::CCM::CacheManager::Element` instance as c
 
             Caveat: is preceded by `joincomma` option.
 
+        - unescapekey
+
+            Unescape all dict keys.
+
+        - lowerkey
+
+            Convert all dict keys to lowercase.
+
+        - upperkey
+
+            Convert all dict keys to uppercase.
+
         Other `getTree` options
 
         - depth

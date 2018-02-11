@@ -35,7 +35,7 @@
         - Type: systemd_unit_architecture
     - `/software/systemd/systemd_unitfile_config_unit_condition/Capability`
         - Optional
-        - Type: string
+        - Type: linux_capability
     - `/software/systemd/systemd_unitfile_config_unit_condition/DirectoryNotEmpty`
         - Optional
         - Type: string
@@ -385,12 +385,18 @@ valid for [Service], [Socket], [Mount], or [Swap] sections
 the [Service] section
 http://www.freedesktop.org/software/systemd/man/systemd.service.html
 
+    - `/software/systemd/systemd_unitfile_config_service/AmbientCapabilities`
+        - Optional
+        - Type: linux_capability
     - `/software/systemd/systemd_unitfile_config_service/BusName`
         - Optional
         - Type: string
     - `/software/systemd/systemd_unitfile_config_service/BusPolicy`
         - Optional
         - Type: string
+    - `/software/systemd/systemd_unitfile_config_service/CapabilityBoundingSet`
+        - Optional
+        - Type: linux_capability
     - `/software/systemd/systemd_unitfile_config_service/ExecReload`
         - Optional
         - Type: string

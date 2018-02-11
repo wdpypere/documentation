@@ -193,10 +193,6 @@
         - Default value: 900
     - `/software/authconfig/authconfig_sssd_ldap/deref`
         - Optional
-        - Type: ldap_deref
-        - Default value: never
-    - `/software/authconfig/authconfig_sssd_ldap/deref`
-        - Optional
         - Type: string
     - `/software/authconfig/authconfig_sssd_ldap/deref_threshold`
         - Optional
@@ -240,7 +236,6 @@
     - `/software/authconfig/authconfig_sssd_ldap/ns_account_lock`
         - Optional
         - Type: string
-        - Default value: nsAccountLock
     - `/software/authconfig/authconfig_sssd_ldap/offline_timeout`
         - Optional
         - Type: long
@@ -263,7 +258,6 @@
     - `/software/authconfig/authconfig_sssd_ldap/referrals`
         - Optional
         - Type: boolean
-        - Default value: true
     - `/software/authconfig/authconfig_sssd_ldap/rootdse_last_usn`
         - Optional
         - Type: string
@@ -271,10 +265,6 @@
         - Optional
         - Type: long
         - Default value: 6
-    - `/software/authconfig/authconfig_sssd_ldap/use_object_class`
-        - Optional
-        - Type: string
-        - Default value: posixAccount
     - `/software/authconfig/authconfig_sssd_ldap/account_expire_policy`
         - Optional
         - Type: string
