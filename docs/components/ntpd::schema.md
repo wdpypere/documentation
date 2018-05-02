@@ -9,7 +9,7 @@
         - Optional
         - Type: type_ip
  - `/software/ntpd/ntpd_server_options`
-    - Description: 
+    - Description:
     Server command options
     Refer to man ntp.conf for details.
 
@@ -51,7 +51,7 @@
         - Type: long
         - Range: 1..4
  - `/software/ntpd/ntpd_restrict_options`
-    - Description: 
+    - Description:
     Base restrict command options
     Refer to C<< man ntp_acc >> for more information or access control commands.
 
@@ -99,12 +99,12 @@
         - Type: long
         - Range: 1..4
  - `/software/ntpd/ntpd_restrict_default`
-    - Description: 
+    - Description:
     Default restrict command options.
     Default when none-defined: restrict default ignore.
 
  - `/software/ntpd/ntpd_server_definition`
-    - Description: 
+    - Description:
     Server address with optional options and access restrictions
     Allows to configure timeservers with their own options.
 
@@ -116,7 +116,7 @@
         - Optional
         - Type: ntpd_server_options
  - `/software/ntpd/ntpd_tinker_options`
-    - Description: 
+    - Description:
     Alter certain system variables used by the clock discipline algorithm
 
     - `/software/ntpd/ntpd_tinker_options/allan`
@@ -141,7 +141,7 @@
         - Optional
         - Type: long
  - `/software/ntpd/ntpd_system_options`
-    - Description: 
+    - Description:
     System options that can be en/disabled.
     Flags not mentioned are unaffected.
     Note that all of these flags can be controlled remotely using
@@ -173,7 +173,7 @@
         - Optional
         - Type: boolean
  - `/software/ntpd/ntpd_logconfig`
-    - Description: 
+    - Description:
     Log configuration arguments must be defined in a list of strings.
     Values for each argument must follow what is defined in ntp_misc manual.
     Refer to ntp_misc manpage for more details.
@@ -185,7 +185,7 @@
         "logconfig" = list("-syncstatus", "+sysevents");
 
  - `/software/ntpd/ntpd_statistics`
-    - Description: 
+    - Description:
     Monitoring/statistics options, see ntp_mon manpage.
 
     - `/software/ntpd/ntpd_statistics/clockstats`
@@ -207,7 +207,7 @@
         - Optional
         - Type: boolean
  - `/software/ntpd/ntpd_filegen`
-    - Description: 
+    - Description:
     Monitoring/statistics options, see ntp_mon manpage.
 
     - `/software/ntpd/ntpd_filegen/name`

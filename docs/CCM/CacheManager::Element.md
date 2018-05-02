@@ -153,9 +153,16 @@ The class <EDG::WP4::CCM::CacheManager::Element> is a base class for
     - convert\_nlist
 
         Array ref of anonymous methods to convert the argument
-        (nlist of elements) to another representation/format.
+        (dict of elements) to another representation/format.
 
         Each element is already processed before the conversion.
+
+    - convert\_key
+
+        Array ref of anonymous methods to convert the key(s) of the dicts
+        to another representation/format.
+
+        At the end, a stringification of the result is used as key.
 
     The arrayref of anonymous methods are applied as follows:
     convert methods `[a, b, c]` will produce `$new = c(b(a($old)))`.

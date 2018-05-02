@@ -6,7 +6,7 @@ nfs: NCM component for `/etc/exports` and `/etc/fstab`
 ### DESCRIPTION
 
 The _nfs_ component manages entries for `NFS` in the `/etc/exports`
-and/or `NFS`/`NFSv4`/`CephFS`/`PanFS`/`bind` mount in the `/etc/fstab` files.
+and/or `NFS`/`NFSv4`/`Ceph`/`PanFS`/`bind` mount in the `/etc/fstab` files.
 
 ### Example
 
@@ -78,7 +78,7 @@ and/or `NFS`/`NFSv4`/`CephFS`/`PanFS`/`bind` mount in the `/etc/fstab` files.
 
     The current managed entries are
 
-    - devices with filesystems `nfs`, `nfs4`, `panfs` or `cephfs`.
+    - devices with filesystems `nfs`, `nfs4`, `panfs` or [ceph](../components/ceph.md).
     - bind mounts (filesystem `none` and mount option `bind`)
 
     Method returns

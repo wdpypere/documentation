@@ -1,96 +1,99 @@
 
 ### Types
 
- - `/software/cups/component_cups_printer`
-    - `/software/cups/component_cups_printer/server`
+ - `/software/cups/cups_component_printer`
+    - `/software/cups/cups_component_printer/server`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/protocol`
+    - `/software/cups/cups_component_printer/protocol`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/printer`
+    - `/software/cups/cups_component_printer/printer`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/uri`
+    - `/software/cups/cups_component_printer/uri`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/delete`
+    - `/software/cups/cups_component_printer/delete`
         - Optional
         - Type: boolean
-    - `/software/cups/component_cups_printer/enable`
+    - `/software/cups/cups_component_printer/enable`
         - Optional
         - Type: boolean
-    - `/software/cups/component_cups_printer/class`
+    - `/software/cups/cups_component_printer/class`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/description`
+    - `/software/cups/cups_component_printer/description`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/location`
+    - `/software/cups/cups_component_printer/location`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/model`
+    - `/software/cups/cups_component_printer/model`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_printer/ppd`
+    - `/software/cups/cups_component_printer/ppd`
         - Optional
         - Type: string
- - `/software/cups/component_cups_options`
-    - `/software/cups/component_cups_options/AutoPurgeJobs`
+ - `/software/cups/cups_component_options`
+    - `/software/cups/cups_component_options/AutoPurgeJobs`
         - Optional
         - Type: legacy_binary_affirmation_string
-    - `/software/cups/component_cups_options/Classification`
+    - `/software/cups/cups_component_options/Classification`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/ClassifyOverride`
+    - `/software/cups/cups_component_options/ClassifyOverride`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/DataDir`
+    - `/software/cups/cups_component_options/DataDir`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/DefaultCharset`
+    - `/software/cups/cups_component_options/DefaultCharset`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/Encryption`
+    - `/software/cups/cups_component_options/Encryption`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/ErrorLog`
+    - `/software/cups/cups_component_options/ErrorLog`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/LogLevel`
+    - `/software/cups/cups_component_options/LogLevel`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/MaxCopies`
+    - `/software/cups/cups_component_options/MaxCopies`
         - Optional
         - Type: long
-    - `/software/cups/component_cups_options/MaxLogSize`
+    - `/software/cups/cups_component_options/MaxLogSize`
         - Optional
         - Type: long
-    - `/software/cups/component_cups_options/PreserveJobHistory`
+    - `/software/cups/cups_component_options/PreserveJobHistory`
         - Optional
         - Type: legacy_binary_affirmation_string
-    - `/software/cups/component_cups_options/PreserveJobFiles`
+    - `/software/cups/cups_component_options/PreserveJobFiles`
         - Optional
         - Type: legacy_binary_affirmation_string
-    - `/software/cups/component_cups_options/Printcap`
+    - `/software/cups/cups_component_options/Printcap`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/ServerAdmin`
+    - `/software/cups/cups_component_options/ServerAdmin`
         - Optional
         - Type: string
-    - `/software/cups/component_cups_options/ServerName`
+    - `/software/cups/cups_component_options/ServerAlias`
         - Optional
         - Type: string
- - `/software/cups/component_cups`
-    - `/software/cups/component_cups/defaultprinter`
+    - `/software/cups/cups_component_options/ServerName`
         - Optional
         - Type: string
-    - `/software/cups/component_cups/nodetype`
+ - `/software/cups/cups_component`
+    - `/software/cups/cups_component/defaultprinter`
         - Optional
         - Type: string
-    - `/software/cups/component_cups/options`
+    - `/software/cups/cups_component/nodetype`
         - Optional
-        - Type: component_cups_options
-    - `/software/cups/component_cups/printers`
+        - Type: string
+    - `/software/cups/cups_component/options`
         - Optional
-        - Type: component_cups_printer
+        - Type: cups_component_options
+    - `/software/cups/cups_component/printers`
+        - Optional
+        - Type: cups_component_printer

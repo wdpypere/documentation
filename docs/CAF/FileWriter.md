@@ -72,7 +72,9 @@ This is a wrapper class for `IO::String` with customised close based on
 
     - `backup`
 
-        Path for the backup file, if this one has to be re-written.
+        Create a backup file when the file already exists and will be modified.
+        The value is used as a suffix to create the backup filename
+        (e.g. `.old`).
 
     - `keeps_state`
 

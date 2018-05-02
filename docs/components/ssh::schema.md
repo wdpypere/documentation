@@ -2,6 +2,14 @@
 ### Types
 
  - `/software/ssh/ssh_preferred_authentication`
+ - `/software/ssh/ssh_ciphers`
+ - `/software/ssh/ssh_hostkeyalgorithms`
+ - `/software/ssh/ssh_kbdinteractivedevices`
+ - `/software/ssh/ssh_kexalgorithms`
+ - `/software/ssh/ssh_MACs`
+ - `/software/ssh/legacy_ssh_MACs`
+ - `/software/ssh/legacy_ssh_ciphers`
+ - `/software/ssh/legacy_ssh_kexalgorithm`
  - `/software/ssh/ssh_core_options_type`
     - `/software/ssh/ssh_core_options_type/AddressFamily`
         - Optional
@@ -11,7 +19,7 @@
         - Type: legacy_binary_affirmation_string
     - `/software/ssh/ssh_core_options_type/Ciphers`
         - Optional
-        - Type: string
+        - Type: legacy_ssh_ciphers
     - `/software/ssh/ssh_core_options_type/Compression`
         - Optional
         - Type: string
@@ -35,7 +43,7 @@
         - Type: string
     - `/software/ssh/ssh_core_options_type/MACs`
         - Optional
-        - Type: string
+        - Type: legacy_ssh_MACs
     - `/software/ssh/ssh_core_options_type/PasswordAuthentication`
         - Optional
         - Type: legacy_binary_affirmation_string
@@ -60,6 +68,9 @@
     - `/software/ssh/ssh_core_options_type/XAuthLocation`
         - Optional
         - Type: string
+    - `/software/ssh/ssh_core_options_type/KexAlgorithms`
+        - Optional
+        - Type: ssh_kexalgorithms
  - `/software/ssh/ssh_daemon_options_type`
     - `/software/ssh/ssh_daemon_options_type/AFSTokenPassing`
         - Optional
@@ -304,3 +315,9 @@
     - `/software/ssh/component_ssh_type/client`
         - Optional
         - Type: ssh_client_type
+
+### Functions
+
+ - is_valid_ssh_MAC
+ - is_valid_ssh_cipher
+ - is_valid_ssh_kexalgorithm

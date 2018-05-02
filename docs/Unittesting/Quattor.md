@@ -121,6 +121,13 @@ that control the following variables:
 
     You can add paths using the `set_immutable` function.
 
+- `%status`
+
+    The content of this hash (keys are the absolute path names) indicates
+    current `CAF::Path::status` (`mode`, `mtime`, `owner` and/or `group`).
+
+    You can add paths using the `set_status` function.
+
 #### Redefined functions
 
 In order to achieve this, the following functions are redefined
@@ -238,6 +245,10 @@ automatically:
 
     `remove_any` and store args in `caf_path` using `add_caf_path`.
 
+- `CAF::Path::status`
+
+    Set and compare status.
+
 - `CAF::Path::_listdir`
 
     Mock underlying \_listdir method that does the actual opendir/readdir/closedir.
@@ -256,6 +267,7 @@ The following functions are exported by default:
 - `set_file_contents`
 
     For file `$filename`, sets the initial `$contents` the component should see.
+    It also sets the default [FileWriter](../CAF/FileWriter.md) permissions (`mode` 644).
 
     Returns the contents on success, undef otherwise.
 
@@ -343,6 +355,10 @@ The following functions are exported by default:
 
     Make [path](../components/path.md) immutable. Pass a false `bool` to make the path mutable again
     (not &lt;undef>, default is to make the path immutable).
+
+- set\_status
+
+    (Re)set status of [path](../components/path.md) to the options (`mode`, `mtime`, `owner` and/or `group`).
 
 - is\_mutable
 

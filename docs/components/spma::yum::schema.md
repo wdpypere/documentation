@@ -15,7 +15,7 @@
         - Type: boolean
         - Default value: false
  - `/software/spma/spma_yum_main_options`
-    - Description: 
+    - Description:
     Main configuration options for yum.conf.
     The cleanup_on_remove, obsoletes, reposdir and pluginpath are set internally.
 

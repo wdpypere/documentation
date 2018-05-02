@@ -145,6 +145,14 @@ pages:
     - opennebula::schema: components/opennebula::schema.md
     - OpenNebula::Server: components/OpenNebula::Server.md
     - OpenNebula::VM: components/OpenNebula::VM.md
+    - openstack: components/openstack.md
+    - openstack::common: components/openstack::common.md
+    - openstack::glance: components/openstack::glance.md
+    - openstack::horizon: components/openstack::horizon.md
+    - openstack::keystone: components/openstack::keystone.md
+    - openstack::neutron: components/openstack::neutron.md
+    - openstack::nova: components/openstack::nova.md
+    - openstack::schema: components/openstack::schema.md
     - openvpn: components/openvpn.md
     - openvpn::schema: components/openvpn::schema.md
     - pam: components/pam.md
@@ -211,6 +219,7 @@ pages:
 - CAF:
     - Application: CAF/Application.md
     - Download::LWP: CAF/Download::LWP.md
+    - Exception: CAF/Exception.md
     - FileEditor: CAF/FileEditor.md
     - FileReader: CAF/FileReader.md
     - FileWriter: CAF/FileWriter.md
