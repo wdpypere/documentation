@@ -255,6 +255,30 @@
         - Description: Partition properties
         - Optional
         - Type: component_ofed_partition_property
+ - `/software/ofed/component_ofed_opensm_config`
+    - Description:
+    OpenSM configuration file. Get the defaults and annotation with 'opensm -c /tmp/opensm.conf'
+
+    - `/software/ofed/component_ofed_opensm_config/virt_enabled`
+        - Description: Virtualization support:
+        0: Ignore Virtualization - No virtualization support
+        1: Disable Virtualization - Disable virtualization on all Virtualization supporting ports
+        2: Enable Virtualization - Enable virtualization on all Virtualization supporting ports
+        - Optional
+        - Type: long
+        - Range: 0..2
+    - `/software/ofed/component_ofed_opensm_config/virt_max_ports_in_process`
+        - Description: Maximum number of ports to be processed simultaneously by Virtualization Manager
+      (0 - process all pending ports)
+        - Optional
+        - Type: long
+        - Range: 0..
+    - `/software/ofed/component_ofed_opensm_config/virt_default_hop_limit`
+        - Description: Default value for hop limit to be returned in path records where either the
+      source or desitination are virtual ports
+        - Optional
+        - Type: long
+        - Range: 0..
  - `/software/ofed/component_ofed_opensm`
     - Description: Subnet manager configuration
     - `/software/ofed/component_ofed_opensm/daemons`
@@ -269,6 +293,10 @@
         - Description: Node name map configuration. Dict key is the GUID starting with 'x' (the 0 is prefixed automatically)
         - Optional
         - Type: string
+    - `/software/ofed/component_ofed_opensm/config`
+        - Description: configuration file
+        - Optional
+        - Type: component_ofed_opensm_config
  - `/software/ofed/ofed_component`
     - `/software/ofed/ofed_component/openib`
         - Optional

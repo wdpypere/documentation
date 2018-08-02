@@ -93,6 +93,13 @@ interaction via `systemctl` command.
     Returns output without trailing newlines on success.
     Undef returned (no error reported) when the exitcode is non-zero.
 
+- systemctl\_is\_active
+
+    Run `systemctl is-active` for `unit`.
+
+    Returns output without trailing newlines on success.
+    Undef returned (no error reported) when the exitcode is non-zero.
+
 #### Private methods
 
 - systemctl\_list
@@ -112,3 +119,9 @@ interaction via `systemctl` command.
     Output that does not match the regexp is skipped, if the regexp matches but
     there is no `name` value in the named group, it is also skipped and
     logged as error.
+
+- systemctl\_simple\_command
+
+    Run a simple systemctl command (like is-active, is-enabled etc.).
+
+    Returns output without trailing newlines on success, undef otherwise.

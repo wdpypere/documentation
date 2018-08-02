@@ -82,6 +82,24 @@
         - Optional
         - Type: string
         - Default value: kvm
+    - `/software/openstack/openstack_nova_libvirt/images_rbd_pool`
+        - Description: The RADOS pool in which rbd volumes are stored
+        - Optional
+        - Type: string
+    - `/software/openstack/openstack_nova_libvirt/images_type`
+        - Description: VM Images format. If default is specified, then use_cow_images flag is used
+    instead of this one. Related options: * virt.use_cow_images * images_volume_group
+        - Optional
+        - Type: string
+    - `/software/openstack/openstack_nova_libvirt/rbd_secret_uuid`
+        - Description: The libvirt UUID of the secret for the rbd_user volumes
+        - Optional
+        - Type: type_uuid
+    - `/software/openstack/openstack_nova_libvirt/rbd_user`
+        - Description: The RADOS client name for accessing rbd(RADOS Block Devices) volumes.
+    Libvirt will refer to this user when connecting and authenticating with the Ceph RBD server
+        - Optional
+        - Type: string
  - `/software/openstack/openstack_nova_neutron`
     - Description:
     The Nova hypervisor configuration options in "neutron" Section.
@@ -115,6 +133,22 @@
     passed to the metadata request in the 'X-Instance-ID' header
         - Optional
         - Type: boolean
+ - `/software/openstack/openstack_nova_scheduler`
+    - Description:
+    The Nova configuration options in the "scheduler" Section.
+
+    - `/software/openstack/openstack_nova_scheduler/discover_hosts_in_cells_interval`
+        - Description: This value controls how often (in seconds) the scheduler should attempt
+    to discover new hosts that have been added to cells. If negative (the
+    default), no automatic discovery will occur.
+    Deployments where compute nodes come and go frequently may want this
+    enabled, where others may prefer to manually discover hosts when one
+    is added to avoid any overhead from constantly checking. If enabled,
+    every time this runs, we will select any unmapped hosts out of each
+    cell database on every run.
+        - Optional
+        - Type: long
+        - Range: -1..
  - `/software/openstack/openstack_nova_common`
     - Description:
     list of Nova common configuration sections
@@ -151,10 +185,9 @@
     - `/software/openstack/openstack_nova_config/api_database`
         - Optional
         - Type: openstack_nova_api_database
- - `/software/openstack/openstack_nova_compute_config`
-    - Description:
-    list of Nova configuration sections
-
-    - `/software/openstack/openstack_nova_compute_config/libvirt`
+    - `/software/openstack/openstack_nova_config/libvirt`
         - Optional
         - Type: openstack_nova_libvirt
+    - `/software/openstack/openstack_nova_config/scheduler`
+        - Optional
+        - Type: openstack_nova_scheduler

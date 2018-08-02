@@ -105,7 +105,7 @@ undef on failure and store the error message in the `fail` attribute.
     Returns CHANGED is something was cleaned-up, SUCCESS if nothing was done
     and undef on failure (and sets the fail attribute).
 
-    The &lt;backup> is a suffix for `dest`.
+    The <backup> is a suffix for `dest`.
 
     If backup is undefined, use `backup` attribute.
     (Pass an empty string to disable backup with `backup` attribute defined)
@@ -243,7 +243,7 @@ undef on failure and store the error message in the `fail` attribute.
     does not exist to start with, success is immediately returned,
     and no backup of `dest` is created).
 
-    The &lt;backup> is a suffix for the cleanup of `dest`
+    The <backup> is a suffix for the cleanup of `dest`
     (and passed to `cleanup` method).
 
     (The basedir of `dest` is created using `directory` method.)

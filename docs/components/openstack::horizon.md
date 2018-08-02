@@ -5,16 +5,17 @@
     - Description:
     The Horizon configuration options in "caches" Section.
 
-    - `/software/openstack/openstack_horizon_caches/backend`
+    - `/software/openstack/openstack_horizon_caches/BACKEND`
         - Description: We recommend you use memcached for development; otherwise after every reload
      of the django development server, you will have to login again
         - Optional
         - Type: string
         - Default value: django.core.cache.backends.memcached.MemcachedCache
-    - `/software/openstack/openstack_horizon_caches/location`
+    - `/software/openstack/openstack_horizon_caches/LOCATION`
         - Description: location format <fqdn>:<port>
         - Optional
         - Type: type_hostport
+        - Default value: 127.0.0.1:11211
  - `/software/openstack/openstack_horizon_api_versions`
     - Description:
     The Horizon api versions section.
@@ -268,10 +269,10 @@
 
     - `/software/openstack/openstack_horizon_allowed_subnet/ipv4`
         - Optional
-        - Type: type_ip
+        - Type: type_ipv4
     - `/software/openstack/openstack_horizon_allowed_subnet/ipv6`
         - Optional
-        - Type: type_ip
+        - Type: type_ipv6
  - `/software/openstack/openstack_horizon_security_group`
     - Description:
     "direction" should not be specified for all_tcp, udp or icmp.
@@ -396,7 +397,7 @@
         - Default value: 35
     - `/software/openstack/openstack_horizon_config/local_path`
         - Optional
-        - Type: type_directory
+        - Type: absolute_file_path
         - Default value: /tmp
     - `/software/openstack/openstack_horizon_config/secret_key`
         - Description: You can either set it to a specific value or you can let horizon generate a
@@ -436,7 +437,7 @@
     - `/software/openstack/openstack_horizon_config/policy_files_path`
         - Description: Path to directory containing policy.json files
         - Optional
-        - Type: type_directory
+        - Type: absolute_file_path
         - Default value: /etc/openstack-dashboard
     - `/software/openstack/openstack_horizon_config/logging`
         - Optional

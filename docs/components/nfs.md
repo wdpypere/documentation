@@ -78,7 +78,7 @@ and/or `NFS`/`NFSv4`/`Ceph`/`PanFS`/`bind` mount in the `/etc/fstab` files.
 
     The current managed entries are
 
-    - devices with filesystems `nfs`, `nfs4`, `panfs` or [ceph](../components/ceph.md).
+    - devices with filesystems `nfs`, `nfs4`, `panfs` or `ceph`.
     - bind mounts (filesystem `none` and mount option `bind`)
 
     Method returns

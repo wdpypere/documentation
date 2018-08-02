@@ -630,6 +630,39 @@
         - Description: database owner
         - Optional
         - Type: string
+ - `/software/postgresql/postgresql_recovery_config`
+    - `/software/postgresql/postgresql_recovery_config/recovery_target_timeline`
+        - Description: recovering into a particular timeline, e.g. 'latest' in case of standby server
+        - Optional
+        - Type: string
+    - `/software/postgresql/postgresql_recovery_config/standby_mode`
+        - Description: start server as standby
+        - Optional
+        - Type: boolean
+    - `/software/postgresql/postgresql_recovery_config/primary_conninfo`
+        - Description: connection info to connect from standby to master
+        - Optional
+        - Type: string
+    - `/software/postgresql/postgresql_recovery_config/trigger_file`
+        - Description: file presence ends recovery
+        - Optional
+        - Type: absolute_file_path
+ - `/software/postgresql/postgresql_recovery`
+    - `/software/postgresql/postgresql_recovery/config`
+        - Description: recovery configuration
+        - Optional
+        - Type: postgresql_recovery_config
+    - `/software/postgresql/postgresql_recovery/suffix`
+        - Description: suffix for the recovery configuration file
+        - Optional
+        - Type: string
+        - Default value: .conf
+    - `/software/postgresql/postgresql_recovery/done`
+        - Description: when recovery.done if present, do not create the recovery configuration
+      (if you use the default suffix, always creating the recovery.conf might be dangerous)
+        - Optional
+        - Type: boolean
+        - Default value: true
  - `/software/postgresql/postgresql_config`
     - `/software/postgresql/postgresql_config/hba`
         - Optional
@@ -644,42 +677,62 @@
     - Description:
     The raw ALTER ROLE sql (cannot contain a ';'; use ENCRYPTED PASSWORD instead)
 
- - `/software/postgresql/component_postgresql`
-    - `/software/postgresql/component_postgresql/commands`
+ - `/software/postgresql/postgresql_initdb`
+    - `/software/postgresql/postgresql_initdb/data-checksums`
+        - Description: enable datachecksumming (requires v9.3.0)
+        - Optional
+        - Type: boolean
+ - `/software/postgresql/postgresql_component`
+    - `/software/postgresql/postgresql_component/commands`
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/config`
+    - `/software/postgresql/postgresql_component/config`
         - Optional
         - Type: postgresql_config
-    - `/software/postgresql/component_postgresql/databases`
+    - `/software/postgresql/postgresql_component/databases`
         - Description: Databases are only added/created, never updated, modified or removed.
         - Optional
         - Type: postgresql_db
-    - `/software/postgresql/component_postgresql/pg_dir`
+    - `/software/postgresql/postgresql_component/pg_dir`
+        - Description: Name of the base directory of the postgres install.
+      This directory will be used for the installation (eg. create the PG_VERSION in subdirectory data).
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/pg_engine`
+    - `/software/postgresql/postgresql_component/pg_engine`
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/pg_hba`
+    - `/software/postgresql/postgresql_component/pg_hba`
+        - Description: Legacy: full text of the pg_hba.conf file
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/pg_port`
+    - `/software/postgresql/postgresql_component/pg_port`
+        - Description: Legacy: port used by postgres
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/pg_script_name`
+    - `/software/postgresql/postgresql_component/pg_script_name`
+        - Description: Name of the service to start postgresql.
+      This should allow you to start multiple postgres instances on the same machine.
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/pg_version`
+    - `/software/postgresql/postgresql_component/pg_version`
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/postgresql_conf`
+    - `/software/postgresql/postgresql_component/postgresql_conf`
+        - Description: Legacy: full text of the postgresql.conf file
         - Optional
         - Type: string
-    - `/software/postgresql/component_postgresql/roles`
+    - `/software/postgresql/postgresql_component/roles`
         - Description: role name with ROLE ALTER SQL command. Roles are only added and updated, never removed.
         - Optional
         - Type: postgresql_role_sql
+    - `/software/postgresql/postgresql_component/recovery`
+        - Description: recovery config and behaviour
+        - Optional
+        - Type: postgresql_recovery
+    - `/software/postgresql/postgresql_component/initdb`
+        - Description: initdb options
+        - Optional
+        - Type: postgresql_initdb
 
 ### Functions
 

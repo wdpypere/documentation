@@ -9,6 +9,10 @@
     - Description:
     Valid SSSD auth providers.
 
+ - `/software/authconfig/sssd_ldap_schema_string`
+    - Description:
+    Valid LDAP schema types.
+
  - `/software/authconfig/authconfig_sssd_simple`
     - Description:
     Simple access provider for SSSD.  See the sssd-simple man page.
@@ -282,6 +286,57 @@
     - `/software/authconfig/authconfig_sssd_domain/pwd_expiration_warning`
         - Optional
         - Type: long
+    - `/software/authconfig/authconfig_sssd_domain/ldap_schema`
+        - Optional
+        - Type: sssd_ldap_schema_string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_group_name`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_referrals`
+        - Optional
+        - Type: boolean
+    - `/software/authconfig/authconfig_sssd_domain/ldap_sasl_mech`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_sasl_authid`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_id_mapping`
+        - Optional
+        - Type: boolean
+    - `/software/authconfig/authconfig_sssd_domain/ldap_search_base`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_account_expire_policy`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_access_order`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ldap_krb5_keytab`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/krb5_realm`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/krb5_use_enterprise_principal`
+        - Optional
+        - Type: boolean
+    - `/software/authconfig/authconfig_sssd_domain/krb5_use_kdcinfo`
+        - Optional
+        - Type: boolean
+    - `/software/authconfig/authconfig_sssd_domain/ad_enable_gc`
+        - Optional
+        - Type: boolean
+    - `/software/authconfig/authconfig_sssd_domain/ad_domain`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ad_enabled_domains`
+        - Optional
+        - Type: string
+    - `/software/authconfig/authconfig_sssd_domain/ad_gpo_access_control`
+        - Optional
+        - Type: string
  - `/software/authconfig/authconfig_method_sssd_type`
     - `/software/authconfig/authconfig_method_sssd_type/nssonly`
         - Optional

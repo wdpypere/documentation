@@ -8,63 +8,156 @@ postgresql : NCM component to manage PostgreSQL configuration.
 This component allows to manage configuration of PostgreSQL.
 It's very basic in functionality (originally developed for dcache usage).
 
-### RESOURCES
+### DESCRIPTION
 
-- `/software/components/postgresql/pg_script_name`
+The component to configure postgresql databases
 
-    Name of the service to start postgresql (default = postgresql).
-    This should allow you to start multiple postgres instances on the same machine.
+### public methods
 
-- `/software/components/postgresql/pg_dir`
+- create\_postgresql\_config
 
-    Name of the base directory of the postgres install (default = `/var/lib/pgsql`).
-    This directory will be used for the installation (eg. create the PG\_VERSION in subdirectory data).
+    Create main or hba config via textrender. Returns undef on failure, changed state otherwise.
+    The `data` hash is either `%MAIN_CONFIG` or `%HBA_CONFIG`;
+    or the pg\_alter hashref (see `pg_alter` method).
 
-- `/software/components/postgresql/pg_port`
+- fetch
 
-    Name of the port used by postgres (default = 5432).
+    Get `$path` from `$config`, if it does not exists, return `$default`.
+    If `$default` is not defined, use empty string as default.
 
-- `/software/components/postgresql/postgresql_conf`
+    If `$path` is a relative path, it is assumed relative from `$self-`prefix>.
 
-    Full text of the postgresql.conf file.
+- get\_version
 
-- `/software/components/postgresql/pg_hba`
+    Return version instance `v$major.$minor.$remainder` version information (from postmaster --version)
 
-    Full text of the pg\_hba.conf file.
+    Return undef in case of problem.
 
-- `/software/components/postgresql/roles`
+- initdb
 
-    nlist of roles to create and alter.
-    Key is the name of the role (new roles added with `CREATE ROLE`).
-    Value is a string used with `ALTER ROLE`.
+    Initialise the database. End result is a stopped initialised database.
 
-- `/software/components/postgresql/databases`
+    Returns undef on failure.
 
-    A nlist of databases to create/initialise.
-    Key is the name of the database.
+- prepare\_service
 
-- `/software/components/postgresql/databases/[db_name]/user`
+    Perform installation sanity check, and generates the
+    pgsql sysconfig entry.
 
-    OWNER of the database.
+    Returns undef on failure, the changed state of the pgsql
+    sysconfig file otherwise
 
-- `/software/components/postgresql/databases/[db_name]/installfile`
+- whoami
 
-    Optional: when a database is newly created, this file is used to initialise
-     the database (using the pgsql -f option).
+    Return a hashref with configuration related data to indentify
+    the service to use
 
-- `/software/components/postgresql/databases/[db_name]/lang`
+    - service
 
-    Optional: when a database is newly created, it sets the pg language for the db
-    (using createlang), this runs after `installfile`.
+        Service instance to use
 
-- `/software/components/postgresql/databases/[db_name]/langfile`
+    - version
 
-    Optional: when a database is newly created, this file is used to add procedures
-    in certain lang (using pgsql -f option), this runs after successful `lang`.
+        Return value from `version` method
 
-- `/software/components/postgresql/databases/[db_name]/sql_user`
+    - pg
 
-    Optional: when a database is newly created, and the
-    `/software/components/postgresql/databases/[db_name]/installfile` is defined,
-    initialise the database with this user. (defaults to the owner of the db
-    as defined in `/software/components/postgresql/databases/[db_name]/user`)
+        A hashref with postgresql basic configuration data,
+        required to start the database.
+
+        - dir
+
+            The database base directory
+
+        - data
+
+            The database 'data' subdirectory
+
+        - port
+
+            The database port
+
+        - log
+
+            The database startup log
+
+        - engine
+
+            Location of service binaries
+
+    - suffix
+
+        Version related suffix (or empty string if none is required).
+        E.g. '-9.2', part of e.g. default servicename, pg\_engine, ...
+
+    - exesuffix
+
+        Version related suffix for certain executables, like '92' in
+        'postgresql92-setup'.
+
+    - defaultname
+
+        The default service name
+
+    - servicename
+
+        The actual servicename
+
+    - service
+
+        The `NCM::Component::Postgresql::Service` instance
+
+    - commands
+
+        The `NCM::Component::Postgresql::Commands` instance
+
+    Return hashref or undef on failure. No errors are logged
+
+- sanity\_check
+
+    Run some additional sanity checks, return undef on failure.
+
+- recovery\_configuration
+
+    Handle recovery file creation
+
+    Returns undef on failure, changed recovery state otherwise.
+
+- start\_postgres
+
+    Try to start postgres service, the cautious way.
+
+    Return undef on failure, SUCCESS otherwise.
+
+- pg\_alter
+
+    Process roles and databases. Returns undef on failure.
+
+    The main purpose is to initialise postgresql.
+
+- roles
+
+    `$roles_tree` is the roles configuration hashref (via `config-`getTree(prefix/roles)>).
+
+    Roles and only added and modified, never removed.
+
+    Return undef on failure.
+
+- databases
+
+    `$dbs_tree` is the databases configuration hashref (via `config-`getTree(prefix/databases)>).
+
+    Databases are only created, never modified or removed.
+
+    Return undef on failure.
+
+    Operation order is
+
+    - create database
+    - initialise with installfile
+    - create lang
+    - apply langfile (if lang defined)
+
+- Configure
+
+    component Configure method
