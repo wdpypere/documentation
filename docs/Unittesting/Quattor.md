@@ -354,7 +354,7 @@ The following functions are exported by default:
 - set\_immutable
 
     Make [path](../components/path.md) immutable. Pass a false `bool` to make the path mutable again
-    (not &lt;undef>, default is to make the path immutable).
+    (not <undef>, default is to make the path immutable).
 
 - set\_status
 

@@ -151,14 +151,36 @@
     - `/software/openstack/openstack_neutron_metadata_config/DEFAULT`
         - Optional
         - Type: openstack_DEFAULTS
+ - `/software/openstack/openstack_neutron_service_config`
+    - Description:
+    list of Neutron service configuration sections
+
+    - `/software/openstack/openstack_neutron_service_config/database`
+        - Optional
+        - Type: openstack_database
+    - `/software/openstack/openstack_neutron_service_config/nova`
+        - Description: nova section has the same options than "keystone_authtoken" but with the nova user and passwod
+        - Optional
+        - Type: openstack_domains_common
  - `/software/openstack/openstack_neutron_config`
     - Description:
     list of Neutron service configuration sections
 
-    - `/software/openstack/openstack_neutron_config/database`
+    - `/software/openstack/openstack_neutron_config/service`
         - Optional
-        - Type: openstack_database
-    - `/software/openstack/openstack_neutron_config/nova`
-        - Description: nova section has the same options than "keystone_authtoken" but with the nova user and passwod
+        - Type: openstack_neutron_service_config
+    - `/software/openstack/openstack_neutron_config/ml2`
         - Optional
-        - Type: openstack_domains_common
+        - Type: openstack_neutron_ml2_config
+    - `/software/openstack/openstack_neutron_config/linuxbridge`
+        - Optional
+        - Type: openstack_neutron_linuxbridge_config
+    - `/software/openstack/openstack_neutron_config/l3`
+        - Optional
+        - Type: openstack_neutron_l3_config
+    - `/software/openstack/openstack_neutron_config/dhcp`
+        - Optional
+        - Type: openstack_neutron_dhcp_config
+    - `/software/openstack/openstack_neutron_config/metadata`
+        - Optional
+        - Type: openstack_neutron_metadata_config

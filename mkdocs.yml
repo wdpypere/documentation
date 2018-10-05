@@ -34,17 +34,18 @@ pages:
     - ccm::schema: components/ccm::schema.md
     - cdp: components/cdp.md
     - cdp::schema: components/cdp::schema.md
-    - ceph: components/ceph.md
-    - Ceph::commands: components/Ceph::commands.md
-    - Ceph::compare: components/Ceph::compare.md
-    - Ceph::config: components/Ceph::config.md
-    - Ceph::crushmap: components/Ceph::crushmap.md
-    - Ceph::daemon: components/Ceph::daemon.md
-    - ceph::schema-mds: components/ceph::schema-mds.md
-    - ceph::schema-mon: components/ceph::schema-mon.md
-    - ceph::schema-osd: components/ceph::schema-osd.md
-    - ceph::schema-rgw: components/ceph::schema-rgw.md
-    - ceph::schema: components/ceph::schema.md
+    - Ceph::Jewel: components/Ceph::Jewel.md
+    - Ceph::Luminous: components/Ceph::Luminous.md
+    - ceph::v1::schema-mds: components/ceph::v1::schema-mds.md
+    - ceph::v1::schema-mon: components/ceph::v1::schema-mon.md
+    - ceph::v1::schema-osd: components/ceph::v1::schema-osd.md
+    - ceph::v1::schema-rgw: components/ceph::v1::schema-rgw.md
+    - ceph::v1::schema: components/ceph::v1::schema.md
+    - ceph::v2::schema-mds: components/ceph::v2::schema-mds.md
+    - ceph::v2::schema-mon: components/ceph::v2::schema-mon.md
+    - ceph::v2::schema-osd: components/ceph::v2::schema-osd.md
+    - ceph::v2::schema-rgw: components/ceph::v2::schema-rgw.md
+    - ceph::v2::schema: components/ceph::v2::schema.md
     - chkconfig: components/chkconfig.md
     - chkconfig::schema: components/chkconfig::schema.md
     - cron: components/cron.md
@@ -147,12 +148,20 @@ pages:
     - OpenNebula::VM: components/OpenNebula::VM.md
     - openstack: components/openstack.md
     - openstack::common: components/openstack::common.md
+    - OpenStack::Glance: components/OpenStack::Glance.md
     - openstack::glance: components/openstack::glance.md
     - openstack::horizon: components/openstack::horizon.md
+    - OpenStack::Horizon: components/OpenStack::Horizon.md
     - openstack::keystone: components/openstack::keystone.md
+    - OpenStack::Keystone: components/OpenStack::Keystone.md
+    - OpenStack::Neutron: components/OpenStack::Neutron.md
     - openstack::neutron: components/openstack::neutron.md
+    - OpenStack::Nova: components/OpenStack::Nova.md
     - openstack::nova: components/openstack::nova.md
+    - OpenStack::Openrc: components/OpenStack::Openrc.md
+    - OpenStack::Rabbitmq: components/OpenStack::Rabbitmq.md
     - openstack::schema: components/openstack::schema.md
+    - OpenStack::Service: components/OpenStack::Service.md
     - openvpn: components/openvpn.md
     - openvpn::schema: components/openvpn::schema.md
     - pam: components/pam.md
@@ -191,10 +200,12 @@ pages:
     - spma::yumng: components/spma::yumng.md
     - spma::yumng::schema: components/spma::yumng::schema.md
     - ssh: components/ssh.md
+    - ssh::schema-5: components/ssh::schema-5.3.md
+    - ssh::schema-7: components/ssh::schema-7.4.md
     - ssh::schema: components/ssh::schema.md
     - sudo: components/sudo.md
-    - sudo::functions: components/sudo::functions.md
     - sudo::schema: components/sudo::schema.md
+    - sudo::validation: components/sudo::validation.md
     - symlink: components/symlink.md
     - symlink::schema: components/symlink::schema.md
     - sysconfig: components/sysconfig.md

@@ -62,6 +62,46 @@
         - Optional
         - Type: string
         - Default value: keystone
+ - `/software/openstack/openstack_openrc_config`
+    - Description:
+Type that sets the OpenStack OpenRC script configuration
+
+    - `/software/openstack/openstack_openrc_config/os_username`
+        - Optional
+        - Type: string
+        - Default value: admin
+    - `/software/openstack/openstack_openrc_config/os_password`
+        - Optional
+        - Type: string
+    - `/software/openstack/openstack_openrc_config/os_project_name`
+        - Optional
+        - Type: string
+        - Default value: admin
+    - `/software/openstack/openstack_openrc_config/os_user_domain_name`
+        - Optional
+        - Type: string
+        - Default value: Default
+    - `/software/openstack/openstack_openrc_config/os_project_domain_name`
+        - Optional
+        - Type: string
+        - Default value: Default
+    - `/software/openstack/openstack_openrc_config/os_region_name`
+        - Optional
+        - Type: string
+        - Default value: RegionOne
+    - `/software/openstack/openstack_openrc_config/os_auth_url`
+        - Optional
+        - Type: type_absoluteURI
+    - `/software/openstack/openstack_openrc_config/os_identity_api_version`
+        - Optional
+        - Type: long
+        - Range: 1..
+        - Default value: 3
+    - `/software/openstack/openstack_openrc_config/os_image_api_version`
+        - Optional
+        - Type: long
+        - Range: 1..
+        - Default value: 2
  - `/software/openstack/openstack_keystone_config`
     - Description:
     The Keystone configuration sections

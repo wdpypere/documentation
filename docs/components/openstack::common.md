@@ -4,7 +4,6 @@
  - `/software/openstack/type_storagebackend`
  - `/software/openstack/type_neutrondriver`
  - `/software/openstack/type_neutronextension`
- - `/software/openstack/type_directory`
  - `/software/openstack/openstack_domains_common`
     - Description:
     OpenStack common domains section
@@ -60,7 +59,7 @@
     to environment variable OSLO_LOCK_PATH. If external locks are used, a lock
     path must be set
         - Optional
-        - Type: type_directory
+        - Type: absolute_file_path
  - `/software/openstack/openstack_DEFAULTS`
     - Description:
     The configuration options in the DEFAULTS Section
@@ -206,5 +205,33 @@
     but it must match here and in the configuration used by the Nova Metadata
     Server. NOTE: Nova uses the same config key, but in [neutron] section.
 
+        - Optional
+        - Type: string
+    - `/software/openstack/openstack_DEFAULTS/firewall_driver`
+        - Description: Driver for security groups
+        - Optional
+        - Type: string
+        - Default value: neutron.agent.linux.iptables_firewall.IptablesFirewallDriver
+    - `/software/openstack/openstack_DEFAULTS/use_neutron`
+        - Description: Use neutron and disable the default firewall setup
+        - Optional
+        - Type: boolean
+        - Default value: true
+ - `/software/openstack/openstack_rabbitmq_config`
+    - Description:
+    Type to enable RabbitMQ and the message system for OpenStack.
+
+    - `/software/openstack/openstack_rabbitmq_config/user`
+        - Description: RabbitMQ user to get access to the queue
+        - Optional
+        - Type: string
+        - Default value: openstack
+    - `/software/openstack/openstack_rabbitmq_config/password`
+        - Optional
+        - Type: string
+    - `/software/openstack/openstack_rabbitmq_config/permissions`
+        - Description: Set config/write/read permissions for RabbitMQ service.
+    A regular expression matching resource names for
+    which the user is granted configure permissions
         - Optional
         - Type: string

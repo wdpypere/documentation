@@ -6,6 +6,7 @@ ncm-ceph: Configuration module for CEPH
 ### DESCRIPTION
 
 Configuration module for CEPH
+This is the old, deprecated version of the component for older versions of ceph
 
 ### IMPLEMENTED FEATURES
 
@@ -60,14 +61,6 @@ be described in this section.
 The component is tested with Ceph version 0.84-0.89 and ceph-deploy version 1.5.11 and 1.5.21.
 Note: ceph-deploy versions 1.5.12-20 contain a bug where gatherkeys returned a wrong exitcode, which
 caused a wrong error message in ncm-ceph. This is solved again in 1.5.21 .
-
-Following package dependencies should be installed to run the component:
-
-- perl-Data-Structure-Util
-- perl-Config-Tiny
-- perl-Test-Deep
-- perl-Data-Compare >= 1.23 !
-- perl-Git-Repository
 
 This version of Data-Compare can be found on http://www.city-fan.org/ftp/contrib/perl-modules/
 

@@ -228,7 +228,4 @@ validation time!
 
 When you lock user accounts, it may not be enough to just lock them
 with `passwd -l`. Depending on how you configured SSH, a locked user
-may still be able to log-in with his public key. You can run
-`<ncm-ncd --unconfigure useraccess `> to temporarily lock all accounts,
-before removing the user's entry from CDB. Or remove manually `.k*login`
-and `.ssh/authorized_keys`.
+may still be able to log-in with his public key.

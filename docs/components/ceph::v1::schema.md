@@ -253,6 +253,10 @@ For use with dedicated pan code that builds the cluster info from remote templat
         - Type: long
         - Range: 0..
         - Default value: 0
+    - `/software/ceph/ceph_component/release`
+        - Optional
+        - Type: string
+        - Default value: Jewel
 
 ### Functions
 

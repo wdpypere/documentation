@@ -2,52 +2,52 @@
 ### Types
 
  - `/software/useraccess/useraccess_pointer`
- - `/software/useraccess/structure_kerberos`
-    - `/software/useraccess/structure_kerberos/realm`
+ - `/software/useraccess/useraccess_kerberos`
+    - `/software/useraccess/useraccess_kerberos/realm`
         - Optional
         - Type: type_hostname
-    - `/software/useraccess/structure_kerberos/principal`
+    - `/software/useraccess/useraccess_kerberos/principal`
         - Optional
         - Type: string
-    - `/software/useraccess/structure_kerberos/instance`
+    - `/software/useraccess/useraccess_kerberos/instance`
         - Optional
         - Type: string
-    - `/software/useraccess/structure_kerberos/host`
+    - `/software/useraccess/useraccess_kerberos/host`
         - Optional
         - Type: type_hostname
  - `/software/useraccess/credentialfilestring`
- - `/software/useraccess/structure_useraccess_auth`
-    - `/software/useraccess/structure_useraccess_auth/ssh_keys_urls`
+ - `/software/useraccess/useraccess_auth`
+    - `/software/useraccess/useraccess_auth/ssh_keys_urls`
         - Optional
         - Type: type_absoluteURI
-    - `/software/useraccess/structure_useraccess_auth/kerberos4`
+    - `/software/useraccess/useraccess_auth/kerberos4`
         - Optional
-        - Type: structure_kerberos
-    - `/software/useraccess/structure_useraccess_auth/kerberos5`
+        - Type: useraccess_kerberos
+    - `/software/useraccess/useraccess_auth/kerberos5`
         - Optional
-        - Type: structure_kerberos
-    - `/software/useraccess/structure_useraccess_auth/acls`
+        - Type: useraccess_kerberos
+    - `/software/useraccess/useraccess_auth/acls`
         - Optional
         - Type: string
-    - `/software/useraccess/structure_useraccess_auth/roles`
+    - `/software/useraccess/useraccess_auth/roles`
         - Optional
         - Type: useraccess_pointer
-    - `/software/useraccess/structure_useraccess_auth/ssh_keys`
+    - `/software/useraccess/useraccess_auth/ssh_keys`
         - Optional
         - Type: string
-    - `/software/useraccess/structure_useraccess_auth/managed_credentials`
+    - `/software/useraccess/useraccess_auth/managed_credentials`
         - Optional
         - Type: credentialfilestring
- - `/software/useraccess/structure_component_useraccess`
-    - `/software/useraccess/structure_component_useraccess/configSerial`
+ - `/software/useraccess/useraccess_component`
+    - `/software/useraccess/useraccess_component/configSerial`
         - Optional
         - Type: string
-    - `/software/useraccess/structure_component_useraccess/users`
+    - `/software/useraccess/useraccess_component/users`
         - Optional
-        - Type: structure_useraccess_auth
-    - `/software/useraccess/structure_component_useraccess/roles`
+        - Type: useraccess_auth
+    - `/software/useraccess/useraccess_component/roles`
         - Optional
-        - Type: structure_useraccess_auth
-    - `/software/useraccess/structure_component_useraccess/acl_services`
+        - Type: useraccess_auth
+    - `/software/useraccess/useraccess_component/acl_services`
         - Optional
         - Type: string
